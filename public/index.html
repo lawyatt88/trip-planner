@@ -2,10 +2,72 @@
 <html>
   <head>
     <title>Trip Planner</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Muli|Raleway" rel="stylesheet">
     <link rel="stylesheet" href="./style.css"></link>
     <script src="./bundle.js" defer></script>
   </head>
   <body>
+    <header>
+      <div class="logo">
+        <a href="#">TripPlanner</a>
+      </div>
+      <nav>
+        <div class="nav-item">
+          <a href="#">About</a>
+        </div>
+        <div class="nav-item">
+          <a href="#">Attractions</a>
+        </div>
+        <div class="nav-item">
+          <a href="#">Itinerary</a>
+        </div>
+      </nav>
+    </header>
     <div id="map"></div>
+    <div id="sidebar">
+      <div id="selectors" class="sidebar-div col-md-12">
+        <h3>Plan Your Trip!</h3>
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Hotels</label>
+                <!-- <select id="dates-field2" class="multiselect-ui form-control" multiple="multiple"></select> -->
+                <!-- <select class="selectpicker" multiple> -->
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Royal Sheraton</option>
+                  <option>Marriot</option>
+                  <option>3</option>
+                </select>
+              </div>
+              <div class="form-group">
+                  <label for="exampleFormControlSelect1">Restaurants</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Activities</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </div>
+        </form>
+        <div id="itinerary">
+            <ul>
+              <li>My Hotels</li>
+              <li>My Restaurants</li>
+              <li>My Activities</li>
+            </ul>
+          </div>
+      </div>
+      
+    </div>
+
+
+
   </body>
 </html>

@@ -1,6 +1,4 @@
-
 const mapboxgl = require('mapbox-gl');
-
 
 const iconURLs = {
   hotels: "http://i.imgur.com/D9574Cu.png",

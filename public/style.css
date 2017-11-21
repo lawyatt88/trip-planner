@@ -4,11 +4,101 @@
 
   body {
     margin: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Muli', sans-serif;
     background-color: #C1B5AD;
   }
 
-  #map {
+  header {
+    display: flex;
+    height: 4rem;
+  }
+
+  header {
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    width: 100vw;
+    height: 4em;
+    padding: 0 5vw;
+    justify-content: space-between;
+    background-color: #004963;
+    border-bottom: 2px #fff solid;
+   }
+  
+  .logo img {
+    height: 100%;
+    padding: 1.25em;
+  }
+  
+  nav {
+    display: flex;
+    padding: 1.25em 2em;
+  }
+  
+  .nav-item {
+    align-self: center;
+  }
+
+  .logo {
+    display: flex;
+    padding: 0.25em 2em;
+  }
+
+  .logo > a {
+    font-size: 34px;
+    padding: 0;
+  }
+
+  .logo a:hover {
+    background: #004963;;
+    color: #fff;
+  }
+  
+  a {
+    color: #fff;
+    padding: 1em;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  a:hover {
+    color: #004963;;
+    text-decoration: none;
+    background: #fff;
+  }
+
+  .mapboxgl-map {
     height: 100vh;
     width: 100vw;
+  }
+
+  .mapboxgl-missing-css {
+    display: none;
+  }
+
+  .sidebar-div {
+    z-index: 3;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 15px;
+  }
+
+  #sidebar {
+    position: absolute;
+    top: 70px;
+    padding: 3em;
+    color: #004963;
+  }
+
+  #itinerary {
+    border-top: 1px #C1B5AD solid;
+  }
+
+  #itinerary > ul {
+    padding-top: 20px;
+    padding-left: 0;
+  }
+
+  #itinerary > ul > li {
+    list-style: none;
   }
