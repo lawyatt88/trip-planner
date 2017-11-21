@@ -1,6 +1,7 @@
 console.log('I AM WORKING!')
 
 const mapboxgl = require("mapbox-gl");
+const buildMarker = require("./marker");
 
 mapboxgl.accessToken = 'pk.eyJ1IjoicmVraGFtdW5kYWRhIiwiYSI6ImNqYTl0emI5djBscnczM2xpbXgzOXMyeDAifQ.7BU2fUbgmkep7gGabrHU6Q';
 
@@ -16,3 +17,6 @@ markerDomEl.style.width = "32px";
 markerDomEl.style.height = "39px";
 markerDomEl.style.backgroundImage = "url(http://i.imgur.com/WbMOfMl.png)";
 new mapboxgl.Marker(markerDomEl).setLngLat([-74.009151, 40.705086]).addTo(map);
+
+const marker = buildMarker("activity", [-74.009151, 40.705086]);
+marker.addTo(map);
