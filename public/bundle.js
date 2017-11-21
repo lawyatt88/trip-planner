@@ -69,7 +69,8 @@
 
 console.log('I AM WORKING!')
 
-const mapboxgl = __webpack_require__(1);
+const mapboxgl = __webpack_require__(2);
+const buildMarker = __webpack_require__(1);
 
 mapboxgl.accessToken = 'pk.eyJ1IjoicmVraGFtdW5kYWRhIiwiYSI6ImNqYTl0emI5djBscnczM2xpbXgzOXMyeDAifQ.7BU2fUbgmkep7gGabrHU6Q';
 
@@ -80,9 +81,43 @@ const map = new mapboxgl.Map({
   style: "mapbox://styles/mapbox/streets-v10" // mapbox has lots of different map styles available.
 });
 
+// const markerDomEl = document.createElement("div"); // Create a new, detached DIV
+// markerDomEl.style.width = "32px";
+// markerDomEl.style.height = "39px";
+// markerDomEl.style.backgroundImage = "url(http://i.imgur.com/WbMOfMl.png)";
+// new mapboxgl.Marker(markerDomEl).setLngLat([-74.009151, 40.705086]).addTo(map);
+
+const marker = buildMarker("activity", [-74.009151, 40.705086]);
+marker.addTo(map);
+
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+const mapboxgl = __webpack_require__(2);
+
+
+const iconURLs = {
+  hotels: "http://i.imgur.com/D9574Cu.png",
+  restaurants: "http://i.imgur.com/cqR6pUI.png",
+  activity: "http://i.imgur.com/WbMOfMl.png"
+};
+
+const buildMarker = (type, coords) => {
+  const markerDomEl = document.createElement("div"); // Create a new, detached DIV
+  markerDomEl.style.width = "32px";
+  markerDomEl.style.height = "39px";
+  markerDomEl.style.backgroundImage = `url(${iconURLs[type]})`;
+  return new mapboxgl.Marker(markerDomEl).setLngLat(coords);
+}
+
+module.exports = buildMarker;
+
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var require;var require;(function(f){if(true){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.mapboxgl = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return require(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
@@ -632,10 +667,10 @@ module.exports={"$version":8,"$root":{"version":{"required":true,"type":"enum","
 
 
 //# sourceMappingURL=mapbox-gl.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports) {
 
 var g;
